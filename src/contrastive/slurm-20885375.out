@@ -1,0 +1,1142 @@
+07/10/2022 01:11:46 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1distributed training: False, 16-bits training: True
+07/10/2022 01:11:46 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+bf16=False,
+bf16_full_eval=False,
+dataloader_drop_last=False,
+dataloader_num_workers=4,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=True,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.NO,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/runs/Jul10_01-11-45_uc2n508.localdomain,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.EPOCH,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=200.0,
+optim=OptimizerNames.ADAMW_HF,
+output_dir=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=1024,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+run_name=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/,
+save_on_each_node=False,
+save_steps=500,
+save_strategy=IntervalStrategy.EPOCH,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.05,
+warmup_steps=0,
+weight_decay=0.01,
+xpu_backend=None,
+)
+[INFO|tokenization_auto.py:344] 2022-07-10 01:11:46,894 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|configuration_utils.py:648] 2022-07-10 01:11:47,337 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:11:47,338 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:49,863 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/vocab.txt from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4ec675a1f3cd38f2ddbe71010ce58471a710dd0188687381cf6f06fa7860c86a.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:49,863 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:49,863 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:49,863 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:49,863 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer_config.json from cache at None
+[INFO|configuration_utils.py:648] 2022-07-10 01:11:50,283 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:11:50,284 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils.py:426] 2022-07-10 01:11:50,331 >> Adding [COL] to the vocabulary
+[INFO|tokenization_utils.py:426] 2022-07-10 01:11:50,331 >> Adding [VAL] to the vocabulary
+[WARNING|logging.py:279] 2022-07-10 01:11:50,331 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:648] 2022-07-10 01:11:50,754 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:11:50,755 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[WARNING|logging.py:279] 2022-07-10 01:11:51,524 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|tokenization_auto.py:344] 2022-07-10 01:11:52,140 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|configuration_utils.py:648] 2022-07-10 01:11:52,568 >> loading configuration file https://huggingface.co/distilroberta-base/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/42d6b7c87cbac84fcdf35aa69504a5ccfca878fcee2a1a9b9ff7a3d1297f9094.aa95727ac70adfa1aaf5c88bea30a4f5e50869c68e68bce96ef1ec41b5facf46
+[INFO|configuration_utils.py:684] 2022-07-10 01:11:52,592 >> Model config RobertaConfig {
+  "_name_or_path": "distilroberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:55,627 >> loading file https://huggingface.co/distilroberta-base/resolve/main/vocab.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/23e0f7484fc8a320856b168861166b48c2976bb4e0861602422e1b0c3fe5bf61.d67d6b367eb24ab43b08ad55e014cf254076934f71d832bbab9ad35644a375ab
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:55,627 >> loading file https://huggingface.co/distilroberta-base/resolve/main/merges.txt from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/c7e8020011da613ff5a9175ddad64cd47238a9525db975eb50ecb965e9f7302f.5d12962c5ee615a4c803841266e9c3be9a691a924f72d395d3a6c6c81157788b
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:55,627 >> loading file https://huggingface.co/distilroberta-base/resolve/main/tokenizer.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/b6a9ca6504e67903474c3fdf82ba249882406e61c2176a9d4dc9c3691c663767.fc9576039592f026ad76a1c231b89aee8668488c671dfbe6616bab2ed298d730
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:55,627 >> loading file https://huggingface.co/distilroberta-base/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:55,627 >> loading file https://huggingface.co/distilroberta-base/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:11:55,627 >> loading file https://huggingface.co/distilroberta-base/resolve/main/tokenizer_config.json from cache at None
+[INFO|configuration_utils.py:648] 2022-07-10 01:11:56,064 >> loading configuration file https://huggingface.co/distilroberta-base/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/42d6b7c87cbac84fcdf35aa69504a5ccfca878fcee2a1a9b9ff7a3d1297f9094.aa95727ac70adfa1aaf5c88bea30a4f5e50869c68e68bce96ef1ec41b5facf46
+[INFO|configuration_utils.py:684] 2022-07-10 01:11:56,065 >> Model config RobertaConfig {
+  "_name_or_path": "distilroberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|configuration_utils.py:648] 2022-07-10 01:11:57,321 >> loading configuration file https://huggingface.co/distilroberta-base/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/42d6b7c87cbac84fcdf35aa69504a5ccfca878fcee2a1a9b9ff7a3d1297f9094.aa95727ac70adfa1aaf5c88bea30a4f5e50869c68e68bce96ef1ec41b5facf46
+[INFO|configuration_utils.py:684] 2022-07-10 01:11:57,321 >> Model config RobertaConfig {
+  "_name_or_path": "distilroberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|configuration_utils.py:648] 2022-07-10 01:12:00,891 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:12:00,891 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|modeling_utils.py:1431] 2022-07-10 01:12:02,116 >> loading weights file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/pytorch_model.bin from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4a4dca34df2df30c98747c12bff19ea7ee5380f4f180d8cfbbeff703c02793da.252b81fc76dfdd6968ed3f27881bcf37416e6c4ec326288155a94380bb85ed17
+[WARNING|modeling_utils.py:1693] 2022-07-10 01:12:02,363 >> Some weights of the model checkpoint at huawei-noah/TinyBERT_General_4L_312D were not used when initializing BertModel: ['cls.seq_relationship.weight', 'fit_denses.4.bias', 'cls.predictions.transform.dense.bias', 'fit_denses.0.weight', 'cls.seq_relationship.bias', 'fit_denses.3.weight', 'fit_denses.1.bias', 'cls.predictions.transform.LayerNorm.bias', 'fit_denses.3.bias', 'cls.predictions.transform.dense.weight', 'fit_denses.1.weight', 'cls.predictions.bias', 'cls.predictions.decoder.weight', 'fit_denses.2.weight', 'fit_denses.2.bias', 'fit_denses.0.bias', 'cls.predictions.transform.LayerNorm.weight', 'fit_denses.4.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[INFO|modeling_utils.py:1710] 2022-07-10 01:12:02,363 >> All the weights of BertModel were initialized from the model checkpoint at huawei-noah/TinyBERT_General_4L_312D.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertModel for predictions without further training.
+[INFO|trainer.py:457] 2022-07-10 01:12:15,968 >> Using amp half precision backend
+/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1279] 2022-07-10 01:12:16,007 >> ***** Running training *****
+[INFO|trainer.py:1280] 2022-07-10 01:12:16,007 >>   Num examples = 1725
+[INFO|trainer.py:1281] 2022-07-10 01:12:16,007 >>   Num Epochs = 200
+[INFO|trainer.py:1282] 2022-07-10 01:12:16,007 >>   Instantaneous batch size per device = 1024
+[INFO|trainer.py:1283] 2022-07-10 01:12:16,007 >>   Total train batch size (w. parallel, distributed & accumulation) = 1024
+[INFO|trainer.py:1284] 2022-07-10 01:12:16,007 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1285] 2022-07-10 01:12:16,007 >>   Total optimization steps = 400
+[INFO|trainer.py:2139] 2022-07-10 01:12:38,074 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-2
+[INFO|trainer.py:2148] 2022-07-10 01:12:38,075 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+{'loss': 6.8508, 'learning_rate': 1e-05, 'epoch': 1.0}
+[INFO|trainer.py:2139] 2022-07-10 01:12:42,443 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-4
+[INFO|trainer.py:2148] 2022-07-10 01:12:42,443 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:12:42,826 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-2] due to args.save_total_limit
+{'loss': 6.725, 'learning_rate': 2e-05, 'epoch': 2.0}
+[INFO|trainer.py:2139] 2022-07-10 01:12:46,822 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-6
+[INFO|trainer.py:2148] 2022-07-10 01:12:46,823 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:12:47,215 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-4] due to args.save_total_limit
+{'loss': 6.4717, 'learning_rate': 3e-05, 'epoch': 3.0}
+[INFO|trainer.py:2139] 2022-07-10 01:12:51,178 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-8
+[INFO|trainer.py:2148] 2022-07-10 01:12:51,178 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:12:51,567 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-6] due to args.save_total_limit
+{'loss': 5.8519, 'learning_rate': 4e-05, 'epoch': 4.0}
+[INFO|trainer.py:2139] 2022-07-10 01:12:55,643 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-10
+[INFO|trainer.py:2148] 2022-07-10 01:12:55,643 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:12:56,038 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-8] due to args.save_total_limit
+{'loss': 5.1536, 'learning_rate': 5e-05, 'epoch': 5.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:00,163 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-12
+[INFO|trainer.py:2148] 2022-07-10 01:13:00,163 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:00,556 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-10] due to args.save_total_limit
+{'loss': 4.5147, 'learning_rate': 6e-05, 'epoch': 6.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:04,609 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-14
+[INFO|trainer.py:2148] 2022-07-10 01:13:04,609 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:05,007 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-12] due to args.save_total_limit
+{'loss': 3.9841, 'learning_rate': 7e-05, 'epoch': 7.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:09,118 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-16
+[INFO|trainer.py:2148] 2022-07-10 01:13:09,118 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:09,511 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-14] due to args.save_total_limit
+{'loss': 3.64, 'learning_rate': 8e-05, 'epoch': 8.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:13,543 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-18
+[INFO|trainer.py:2148] 2022-07-10 01:13:13,544 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:13,953 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-16] due to args.save_total_limit
+{'loss': 3.3661, 'learning_rate': 9e-05, 'epoch': 9.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:18,049 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-20
+[INFO|trainer.py:2148] 2022-07-10 01:13:18,049 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:18,555 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-18] due to args.save_total_limit
+{'loss': 3.1678, 'learning_rate': 0.0001, 'epoch': 10.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:22,506 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-22
+[INFO|trainer.py:2148] 2022-07-10 01:13:22,507 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:22,899 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-20] due to args.save_total_limit
+{'loss': 2.8458, 'learning_rate': 9.947368421052632e-05, 'epoch': 11.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:26,744 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-24
+[INFO|trainer.py:2148] 2022-07-10 01:13:26,745 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:27,136 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-22] due to args.save_total_limit
+{'loss': 2.7335, 'learning_rate': 9.894736842105263e-05, 'epoch': 12.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:31,073 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-26
+[INFO|trainer.py:2148] 2022-07-10 01:13:31,073 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:31,449 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-24] due to args.save_total_limit
+{'loss': 2.3391, 'learning_rate': 9.842105263157894e-05, 'epoch': 13.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:35,332 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-28
+[INFO|trainer.py:2148] 2022-07-10 01:13:35,332 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:35,734 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-26] due to args.save_total_limit
+{'loss': 2.025, 'learning_rate': 9.789473684210527e-05, 'epoch': 14.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:39,612 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-30
+[INFO|trainer.py:2148] 2022-07-10 01:13:39,612 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:40,007 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-28] due to args.save_total_limit
+{'loss': 2.1067, 'learning_rate': 9.736842105263158e-05, 'epoch': 15.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:43,963 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-32
+[INFO|trainer.py:2148] 2022-07-10 01:13:43,963 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:44,359 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-30] due to args.save_total_limit
+{'loss': 1.9687, 'learning_rate': 9.68421052631579e-05, 'epoch': 16.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:48,279 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-34
+[INFO|trainer.py:2148] 2022-07-10 01:13:48,280 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:48,662 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-32] due to args.save_total_limit
+{'loss': 1.6912, 'learning_rate': 9.631578947368421e-05, 'epoch': 17.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:52,520 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-36
+[INFO|trainer.py:2148] 2022-07-10 01:13:52,520 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:52,903 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-34] due to args.save_total_limit
+{'loss': 1.8147, 'learning_rate': 9.578947368421052e-05, 'epoch': 18.0}
+[INFO|trainer.py:2139] 2022-07-10 01:13:56,807 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-38
+[INFO|trainer.py:2148] 2022-07-10 01:13:56,807 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:13:57,185 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-36] due to args.save_total_limit
+{'loss': 1.6105, 'learning_rate': 9.526315789473685e-05, 'epoch': 19.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:01,065 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-40
+[INFO|trainer.py:2148] 2022-07-10 01:14:01,065 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:01,450 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-38] due to args.save_total_limit
+{'loss': 1.5878, 'learning_rate': 9.473684210526316e-05, 'epoch': 20.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:05,356 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-42
+[INFO|trainer.py:2148] 2022-07-10 01:14:05,356 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:05,734 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-40] due to args.save_total_limit
+{'loss': 1.4926, 'learning_rate': 9.421052631578949e-05, 'epoch': 21.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:09,607 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-44
+[INFO|trainer.py:2148] 2022-07-10 01:14:09,608 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:10,001 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-42] due to args.save_total_limit
+{'loss': 1.367, 'learning_rate': 9.36842105263158e-05, 'epoch': 22.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:13,858 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-46
+[INFO|trainer.py:2148] 2022-07-10 01:14:13,858 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:14,255 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-44] due to args.save_total_limit
+{'loss': 1.457, 'learning_rate': 9.315789473684211e-05, 'epoch': 23.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:18,143 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-48
+[INFO|trainer.py:2148] 2022-07-10 01:14:18,143 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:18,536 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-46] due to args.save_total_limit
+{'loss': 1.3272, 'learning_rate': 9.263157894736843e-05, 'epoch': 24.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:22,395 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-50
+[INFO|trainer.py:2148] 2022-07-10 01:14:22,396 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:22,782 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-48] due to args.save_total_limit
+{'loss': 1.3001, 'learning_rate': 9.210526315789474e-05, 'epoch': 25.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:26,649 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-52
+[INFO|trainer.py:2148] 2022-07-10 01:14:26,649 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:27,038 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-50] due to args.save_total_limit
+{'loss': 1.3589, 'learning_rate': 9.157894736842105e-05, 'epoch': 26.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:30,964 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-54
+[INFO|trainer.py:2148] 2022-07-10 01:14:30,964 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:31,354 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-52] due to args.save_total_limit
+{'loss': 1.3113, 'learning_rate': 9.105263157894738e-05, 'epoch': 27.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:35,352 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-56
+[INFO|trainer.py:2148] 2022-07-10 01:14:35,352 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:35,766 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-54] due to args.save_total_limit
+{'loss': 1.2224, 'learning_rate': 9.052631578947369e-05, 'epoch': 28.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:39,715 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-58
+[INFO|trainer.py:2148] 2022-07-10 01:14:39,715 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:40,112 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-56] due to args.save_total_limit
+{'loss': 1.2029, 'learning_rate': 9e-05, 'epoch': 29.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:44,054 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-60
+[INFO|trainer.py:2148] 2022-07-10 01:14:44,054 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:44,437 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-58] due to args.save_total_limit
+{'loss': 1.2307, 'learning_rate': 8.947368421052632e-05, 'epoch': 30.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:48,440 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-62
+[INFO|trainer.py:2148] 2022-07-10 01:14:48,440 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:48,831 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-60] due to args.save_total_limit
+{'loss': 1.1901, 'learning_rate': 8.894736842105263e-05, 'epoch': 31.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:52,775 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-64
+[INFO|trainer.py:2148] 2022-07-10 01:14:52,775 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:53,170 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-62] due to args.save_total_limit
+{'loss': 1.1087, 'learning_rate': 8.842105263157894e-05, 'epoch': 32.0}
+[INFO|trainer.py:2139] 2022-07-10 01:14:57,055 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-66
+[INFO|trainer.py:2148] 2022-07-10 01:14:57,055 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:14:57,434 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-64] due to args.save_total_limit
+{'loss': 1.0743, 'learning_rate': 8.789473684210526e-05, 'epoch': 33.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:01,337 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-68
+[INFO|trainer.py:2148] 2022-07-10 01:15:01,337 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:01,722 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-66] due to args.save_total_limit
+{'loss': 1.0048, 'learning_rate': 8.736842105263158e-05, 'epoch': 34.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:05,606 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-70
+[INFO|trainer.py:2148] 2022-07-10 01:15:05,606 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:06,000 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-68] due to args.save_total_limit
+{'loss': 1.0536, 'learning_rate': 8.68421052631579e-05, 'epoch': 35.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:09,916 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-72
+[INFO|trainer.py:2148] 2022-07-10 01:15:09,916 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:10,301 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-70] due to args.save_total_limit
+{'loss': 1.0321, 'learning_rate': 8.631578947368421e-05, 'epoch': 36.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:14,181 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-74
+[INFO|trainer.py:2148] 2022-07-10 01:15:14,181 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:14,588 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-72] due to args.save_total_limit
+{'loss': 1.0708, 'learning_rate': 8.578947368421054e-05, 'epoch': 37.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:18,451 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-76
+[INFO|trainer.py:2148] 2022-07-10 01:15:18,451 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:18,841 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-74] due to args.save_total_limit
+{'loss': 1.0887, 'learning_rate': 8.526315789473685e-05, 'epoch': 38.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:22,815 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-78
+[INFO|trainer.py:2148] 2022-07-10 01:15:22,815 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:23,209 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-76] due to args.save_total_limit
+{'loss': 0.8869, 'learning_rate': 8.473684210526316e-05, 'epoch': 39.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:27,151 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-80
+[INFO|trainer.py:2148] 2022-07-10 01:15:27,151 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:27,546 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-78] due to args.save_total_limit
+{'loss': 0.9451, 'learning_rate': 8.421052631578948e-05, 'epoch': 40.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:31,426 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-82
+[INFO|trainer.py:2148] 2022-07-10 01:15:31,426 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:31,830 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-80] due to args.save_total_limit
+{'loss': 0.9958, 'learning_rate': 8.36842105263158e-05, 'epoch': 41.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:35,729 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-84
+[INFO|trainer.py:2148] 2022-07-10 01:15:35,729 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:36,120 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-82] due to args.save_total_limit
+{'loss': 0.9805, 'learning_rate': 8.315789473684212e-05, 'epoch': 42.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:39,977 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-86
+[INFO|trainer.py:2148] 2022-07-10 01:15:39,977 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:40,380 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-84] due to args.save_total_limit
+{'loss': 0.9307, 'learning_rate': 8.263157894736843e-05, 'epoch': 43.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:44,290 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-88
+[INFO|trainer.py:2148] 2022-07-10 01:15:44,290 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:44,669 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-86] due to args.save_total_limit
+{'loss': 0.9196, 'learning_rate': 8.210526315789474e-05, 'epoch': 44.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:48,596 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-90
+[INFO|trainer.py:2148] 2022-07-10 01:15:48,596 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:48,985 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-88] due to args.save_total_limit
+{'loss': 0.8829, 'learning_rate': 8.157894736842105e-05, 'epoch': 45.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:52,864 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-92
+[INFO|trainer.py:2148] 2022-07-10 01:15:52,865 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:53,255 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-90] due to args.save_total_limit
+{'loss': 0.9704, 'learning_rate': 8.105263157894737e-05, 'epoch': 46.0}
+[INFO|trainer.py:2139] 2022-07-10 01:15:57,188 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-94
+[INFO|trainer.py:2148] 2022-07-10 01:15:57,188 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:15:57,574 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-92] due to args.save_total_limit
+{'loss': 0.7916, 'learning_rate': 8.052631578947368e-05, 'epoch': 47.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:01,464 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-96
+[INFO|trainer.py:2148] 2022-07-10 01:16:01,464 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:01,852 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-94] due to args.save_total_limit
+{'loss': 0.8786, 'learning_rate': 8e-05, 'epoch': 48.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:05,704 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-98
+[INFO|trainer.py:2148] 2022-07-10 01:16:05,704 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:06,092 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-96] due to args.save_total_limit
+{'loss': 0.8848, 'learning_rate': 7.947368421052632e-05, 'epoch': 49.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:10,143 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-100
+[INFO|trainer.py:2148] 2022-07-10 01:16:10,143 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:10,543 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-98] due to args.save_total_limit
+{'loss': 0.8302, 'learning_rate': 7.894736842105263e-05, 'epoch': 50.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:14,523 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-102
+[INFO|trainer.py:2148] 2022-07-10 01:16:14,524 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:14,918 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-100] due to args.save_total_limit
+{'loss': 0.7628, 'learning_rate': 7.842105263157895e-05, 'epoch': 51.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:18,902 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-104
+[INFO|trainer.py:2148] 2022-07-10 01:16:18,902 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:19,292 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-102] due to args.save_total_limit
+{'loss': 0.8698, 'learning_rate': 7.789473684210526e-05, 'epoch': 52.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:23,273 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-106
+[INFO|trainer.py:2148] 2022-07-10 01:16:23,273 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:23,668 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-104] due to args.save_total_limit
+{'loss': 0.7667, 'learning_rate': 7.736842105263159e-05, 'epoch': 53.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:27,630 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-108
+[INFO|trainer.py:2148] 2022-07-10 01:16:27,630 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:28,035 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-106] due to args.save_total_limit
+{'loss': 0.8545, 'learning_rate': 7.68421052631579e-05, 'epoch': 54.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:31,999 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-110
+[INFO|trainer.py:2148] 2022-07-10 01:16:31,999 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:32,382 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-108] due to args.save_total_limit
+{'loss': 0.7517, 'learning_rate': 7.631578947368422e-05, 'epoch': 55.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:36,220 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-112
+[INFO|trainer.py:2148] 2022-07-10 01:16:36,220 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:36,610 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-110] due to args.save_total_limit
+{'loss': 0.7971, 'learning_rate': 7.578947368421054e-05, 'epoch': 56.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:40,527 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-114
+[INFO|trainer.py:2148] 2022-07-10 01:16:40,527 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:40,912 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-112] due to args.save_total_limit
+{'loss': 0.7649, 'learning_rate': 7.526315789473685e-05, 'epoch': 57.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:44,774 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-116
+[INFO|trainer.py:2148] 2022-07-10 01:16:44,774 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:45,169 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-114] due to args.save_total_limit
+{'loss': 0.7244, 'learning_rate': 7.473684210526316e-05, 'epoch': 58.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:49,008 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-118
+[INFO|trainer.py:2148] 2022-07-10 01:16:49,008 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:49,402 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-116] due to args.save_total_limit
+{'loss': 0.756, 'learning_rate': 7.421052631578948e-05, 'epoch': 59.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:53,306 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-120
+[INFO|trainer.py:2148] 2022-07-10 01:16:53,306 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:53,698 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-118] due to args.save_total_limit
+{'loss': 0.6984, 'learning_rate': 7.368421052631579e-05, 'epoch': 60.0}
+[INFO|trainer.py:2139] 2022-07-10 01:16:57,530 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-122
+[INFO|trainer.py:2148] 2022-07-10 01:16:57,530 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:16:57,926 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-120] due to args.save_total_limit
+{'loss': 0.752, 'learning_rate': 7.315789473684212e-05, 'epoch': 61.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:01,823 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-124
+[INFO|trainer.py:2148] 2022-07-10 01:17:01,823 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:02,216 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-122] due to args.save_total_limit
+{'loss': 0.7858, 'learning_rate': 7.263157894736843e-05, 'epoch': 62.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:06,072 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-126
+[INFO|trainer.py:2148] 2022-07-10 01:17:06,073 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:06,464 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-124] due to args.save_total_limit
+{'loss': 0.7917, 'learning_rate': 7.210526315789474e-05, 'epoch': 63.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:10,336 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-128
+[INFO|trainer.py:2148] 2022-07-10 01:17:10,336 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:10,727 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-126] due to args.save_total_limit
+{'loss': 0.7384, 'learning_rate': 7.157894736842105e-05, 'epoch': 64.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:14,593 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-130
+[INFO|trainer.py:2148] 2022-07-10 01:17:14,593 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:14,979 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-128] due to args.save_total_limit
+{'loss': 0.7338, 'learning_rate': 7.105263157894737e-05, 'epoch': 65.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:18,893 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-132
+[INFO|trainer.py:2148] 2022-07-10 01:17:18,893 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:19,289 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-130] due to args.save_total_limit
+{'loss': 0.7071, 'learning_rate': 7.052631578947368e-05, 'epoch': 66.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:23,268 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-134
+[INFO|trainer.py:2148] 2022-07-10 01:17:23,268 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:23,661 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-132] due to args.save_total_limit
+{'loss': 0.752, 'learning_rate': 7e-05, 'epoch': 67.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:27,651 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-136
+[INFO|trainer.py:2148] 2022-07-10 01:17:27,651 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:28,061 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-134] due to args.save_total_limit
+{'loss': 0.7462, 'learning_rate': 6.947368421052632e-05, 'epoch': 68.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:32,024 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-138
+[INFO|trainer.py:2148] 2022-07-10 01:17:32,024 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:32,441 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-136] due to args.save_total_limit
+{'loss': 0.6883, 'learning_rate': 6.894736842105263e-05, 'epoch': 69.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:36,419 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-140
+[INFO|trainer.py:2148] 2022-07-10 01:17:36,419 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:36,816 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-138] due to args.save_total_limit
+{'loss': 0.7204, 'learning_rate': 6.842105263157895e-05, 'epoch': 70.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:40,734 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-142
+[INFO|trainer.py:2148] 2022-07-10 01:17:40,734 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:41,129 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-140] due to args.save_total_limit
+{'loss': 0.7478, 'learning_rate': 6.789473684210527e-05, 'epoch': 71.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:45,073 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-144
+[INFO|trainer.py:2148] 2022-07-10 01:17:45,073 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:45,486 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-142] due to args.save_total_limit
+{'loss': 0.721, 'learning_rate': 6.736842105263159e-05, 'epoch': 72.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:49,377 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-146
+[INFO|trainer.py:2148] 2022-07-10 01:17:49,377 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:49,762 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-144] due to args.save_total_limit
+{'loss': 0.7279, 'learning_rate': 6.68421052631579e-05, 'epoch': 73.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:53,674 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-148
+[INFO|trainer.py:2148] 2022-07-10 01:17:53,674 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:54,064 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-146] due to args.save_total_limit
+{'loss': 0.7249, 'learning_rate': 6.631578947368421e-05, 'epoch': 74.0}
+[INFO|trainer.py:2139] 2022-07-10 01:17:57,966 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-150
+[INFO|trainer.py:2148] 2022-07-10 01:17:57,966 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:17:58,363 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-148] due to args.save_total_limit
+{'loss': 0.7786, 'learning_rate': 6.578947368421054e-05, 'epoch': 75.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:02,296 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-152
+[INFO|trainer.py:2148] 2022-07-10 01:18:02,296 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:02,673 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-150] due to args.save_total_limit
+{'loss': 0.6677, 'learning_rate': 6.526315789473685e-05, 'epoch': 76.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:06,546 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-154
+[INFO|trainer.py:2148] 2022-07-10 01:18:06,546 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:06,922 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-152] due to args.save_total_limit
+{'loss': 0.7097, 'learning_rate': 6.473684210526316e-05, 'epoch': 77.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:10,788 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-156
+[INFO|trainer.py:2148] 2022-07-10 01:18:10,788 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:11,168 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-154] due to args.save_total_limit
+{'loss': 0.6062, 'learning_rate': 6.421052631578948e-05, 'epoch': 78.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:15,069 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-158
+[INFO|trainer.py:2148] 2022-07-10 01:18:15,069 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:15,452 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-156] due to args.save_total_limit
+{'loss': 0.6449, 'learning_rate': 6.368421052631579e-05, 'epoch': 79.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:19,374 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-160
+[INFO|trainer.py:2148] 2022-07-10 01:18:19,374 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:19,761 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-158] due to args.save_total_limit
+{'loss': 0.6541, 'learning_rate': 6.31578947368421e-05, 'epoch': 80.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:23,640 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-162
+[INFO|trainer.py:2148] 2022-07-10 01:18:23,641 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:24,046 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-160] due to args.save_total_limit
+{'loss': 0.7084, 'learning_rate': 6.263157894736842e-05, 'epoch': 81.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:27,949 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-164
+[INFO|trainer.py:2148] 2022-07-10 01:18:27,949 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:28,346 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-162] due to args.save_total_limit
+{'loss': 0.6411, 'learning_rate': 6.210526315789474e-05, 'epoch': 82.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:32,261 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-166
+[INFO|trainer.py:2148] 2022-07-10 01:18:32,261 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:32,665 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-164] due to args.save_total_limit
+{'loss': 0.6901, 'learning_rate': 6.157894736842106e-05, 'epoch': 83.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:36,575 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-168
+[INFO|trainer.py:2148] 2022-07-10 01:18:36,575 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:36,965 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-166] due to args.save_total_limit
+{'loss': 0.7087, 'learning_rate': 6.105263157894737e-05, 'epoch': 84.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:40,814 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-170
+[INFO|trainer.py:2148] 2022-07-10 01:18:40,815 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:41,199 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-168] due to args.save_total_limit
+{'loss': 0.6919, 'learning_rate': 6.052631578947369e-05, 'epoch': 85.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:45,105 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-172
+[INFO|trainer.py:2148] 2022-07-10 01:18:45,105 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:45,481 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-170] due to args.save_total_limit
+{'loss': 0.6678, 'learning_rate': 6e-05, 'epoch': 86.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:49,350 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-174
+[INFO|trainer.py:2148] 2022-07-10 01:18:49,350 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:49,761 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-172] due to args.save_total_limit
+{'loss': 0.6825, 'learning_rate': 5.9473684210526315e-05, 'epoch': 87.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:53,663 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-176
+[INFO|trainer.py:2148] 2022-07-10 01:18:53,663 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:54,056 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-174] due to args.save_total_limit
+{'loss': 0.6861, 'learning_rate': 5.894736842105263e-05, 'epoch': 88.0}
+[INFO|trainer.py:2139] 2022-07-10 01:18:57,960 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-178
+[INFO|trainer.py:2148] 2022-07-10 01:18:57,960 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:18:58,368 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-176] due to args.save_total_limit
+{'loss': 0.6791, 'learning_rate': 5.8421052631578954e-05, 'epoch': 89.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:02,317 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-180
+[INFO|trainer.py:2148] 2022-07-10 01:19:02,317 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:02,715 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-178] due to args.save_total_limit
+{'loss': 0.6286, 'learning_rate': 5.789473684210527e-05, 'epoch': 90.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:06,539 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-182
+[INFO|trainer.py:2148] 2022-07-10 01:19:06,539 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:06,921 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-180] due to args.save_total_limit
+{'loss': 0.6399, 'learning_rate': 5.736842105263158e-05, 'epoch': 91.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:10,842 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-184
+[INFO|trainer.py:2148] 2022-07-10 01:19:10,842 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:11,241 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-182] due to args.save_total_limit
+{'loss': 0.6125, 'learning_rate': 5.68421052631579e-05, 'epoch': 92.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:15,085 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-186
+[INFO|trainer.py:2148] 2022-07-10 01:19:15,085 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:15,479 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-184] due to args.save_total_limit
+{'loss': 0.6243, 'learning_rate': 5.631578947368421e-05, 'epoch': 93.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:19,349 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-188
+[INFO|trainer.py:2148] 2022-07-10 01:19:19,349 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:19,744 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-186] due to args.save_total_limit
+{'loss': 0.5911, 'learning_rate': 5.5789473684210526e-05, 'epoch': 94.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:23,605 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-190
+[INFO|trainer.py:2148] 2022-07-10 01:19:23,605 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:23,998 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-188] due to args.save_total_limit
+{'loss': 0.6414, 'learning_rate': 5.526315789473685e-05, 'epoch': 95.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:27,934 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-192
+[INFO|trainer.py:2148] 2022-07-10 01:19:27,934 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:28,319 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-190] due to args.save_total_limit
+{'loss': 0.6062, 'learning_rate': 5.4736842105263165e-05, 'epoch': 96.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:32,224 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-194
+[INFO|trainer.py:2148] 2022-07-10 01:19:32,224 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:32,615 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-192] due to args.save_total_limit
+{'loss': 0.5949, 'learning_rate': 5.421052631578948e-05, 'epoch': 97.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:36,537 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-196
+[INFO|trainer.py:2148] 2022-07-10 01:19:36,537 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:36,916 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-194] due to args.save_total_limit
+{'loss': 0.6563, 'learning_rate': 5.368421052631579e-05, 'epoch': 98.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:40,825 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-198
+[INFO|trainer.py:2148] 2022-07-10 01:19:40,826 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:41,229 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-196] due to args.save_total_limit
+{'loss': 0.6611, 'learning_rate': 5.3157894736842104e-05, 'epoch': 99.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:45,153 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-200
+[INFO|trainer.py:2148] 2022-07-10 01:19:45,153 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:45,553 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-198] due to args.save_total_limit
+{'loss': 0.6849, 'learning_rate': 5.2631578947368424e-05, 'epoch': 100.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:49,460 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-202
+[INFO|trainer.py:2148] 2022-07-10 01:19:49,460 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:49,850 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-200] due to args.save_total_limit
+{'loss': 0.6676, 'learning_rate': 5.210526315789474e-05, 'epoch': 101.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:53,753 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-204
+[INFO|trainer.py:2148] 2022-07-10 01:19:53,753 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:54,149 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-202] due to args.save_total_limit
+{'loss': 0.5883, 'learning_rate': 5.157894736842106e-05, 'epoch': 102.0}
+[INFO|trainer.py:2139] 2022-07-10 01:19:58,030 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-206
+[INFO|trainer.py:2148] 2022-07-10 01:19:58,030 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:19:58,420 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-204] due to args.save_total_limit
+{'loss': 0.6336, 'learning_rate': 5.1052631578947376e-05, 'epoch': 103.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:02,319 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-208
+[INFO|trainer.py:2148] 2022-07-10 01:20:02,320 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:02,715 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-206] due to args.save_total_limit
+{'loss': 0.6876, 'learning_rate': 5.052631578947369e-05, 'epoch': 104.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:06,593 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-210
+[INFO|trainer.py:2148] 2022-07-10 01:20:06,593 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:06,996 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-208] due to args.save_total_limit
+{'loss': 0.6397, 'learning_rate': 5e-05, 'epoch': 105.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:10,928 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-212
+[INFO|trainer.py:2148] 2022-07-10 01:20:10,928 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:11,335 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-210] due to args.save_total_limit
+{'loss': 0.6332, 'learning_rate': 4.9473684210526315e-05, 'epoch': 106.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:15,314 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-214
+[INFO|trainer.py:2148] 2022-07-10 01:20:15,315 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:15,705 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-212] due to args.save_total_limit
+{'loss': 0.604, 'learning_rate': 4.8947368421052635e-05, 'epoch': 107.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:19,697 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-216
+[INFO|trainer.py:2148] 2022-07-10 01:20:19,697 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:20,085 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-214] due to args.save_total_limit
+{'loss': 0.5653, 'learning_rate': 4.842105263157895e-05, 'epoch': 108.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:24,027 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-218
+[INFO|trainer.py:2148] 2022-07-10 01:20:24,027 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:24,406 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-216] due to args.save_total_limit
+{'loss': 0.5837, 'learning_rate': 4.789473684210526e-05, 'epoch': 109.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:28,303 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-220
+[INFO|trainer.py:2148] 2022-07-10 01:20:28,303 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:28,694 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-218] due to args.save_total_limit
+{'loss': 0.6098, 'learning_rate': 4.736842105263158e-05, 'epoch': 110.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:32,531 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-222
+[INFO|trainer.py:2148] 2022-07-10 01:20:32,532 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:32,924 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-220] due to args.save_total_limit
+{'loss': 0.6047, 'learning_rate': 4.68421052631579e-05, 'epoch': 111.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:36,802 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-224
+[INFO|trainer.py:2148] 2022-07-10 01:20:36,802 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:37,197 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-222] due to args.save_total_limit
+{'loss': 0.6245, 'learning_rate': 4.6315789473684214e-05, 'epoch': 112.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:41,037 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-226
+[INFO|trainer.py:2148] 2022-07-10 01:20:41,037 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:41,420 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-224] due to args.save_total_limit
+{'loss': 0.6443, 'learning_rate': 4.5789473684210527e-05, 'epoch': 113.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:45,274 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-228
+[INFO|trainer.py:2148] 2022-07-10 01:20:45,274 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:45,656 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-226] due to args.save_total_limit
+{'loss': 0.629, 'learning_rate': 4.5263157894736846e-05, 'epoch': 114.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:49,500 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-230
+[INFO|trainer.py:2148] 2022-07-10 01:20:49,500 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:49,881 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-228] due to args.save_total_limit
+{'loss': 0.5908, 'learning_rate': 4.473684210526316e-05, 'epoch': 115.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:53,728 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-232
+[INFO|trainer.py:2148] 2022-07-10 01:20:53,729 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:54,115 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-230] due to args.save_total_limit
+{'loss': 0.6547, 'learning_rate': 4.421052631578947e-05, 'epoch': 116.0}
+[INFO|trainer.py:2139] 2022-07-10 01:20:57,944 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-234
+[INFO|trainer.py:2148] 2022-07-10 01:20:57,944 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:20:58,330 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-232] due to args.save_total_limit
+{'loss': 0.5961, 'learning_rate': 4.368421052631579e-05, 'epoch': 117.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:02,183 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-236
+[INFO|trainer.py:2148] 2022-07-10 01:21:02,183 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:02,565 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-234] due to args.save_total_limit
+{'loss': 0.6257, 'learning_rate': 4.3157894736842105e-05, 'epoch': 118.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:06,442 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-238
+[INFO|trainer.py:2148] 2022-07-10 01:21:06,442 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:06,827 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-236] due to args.save_total_limit
+{'loss': 0.5724, 'learning_rate': 4.2631578947368425e-05, 'epoch': 119.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:10,754 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-240
+[INFO|trainer.py:2148] 2022-07-10 01:21:10,755 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:11,154 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-238] due to args.save_total_limit
+{'loss': 0.596, 'learning_rate': 4.210526315789474e-05, 'epoch': 120.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:15,100 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-242
+[INFO|trainer.py:2148] 2022-07-10 01:21:15,100 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:15,500 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-240] due to args.save_total_limit
+{'loss': 0.5954, 'learning_rate': 4.157894736842106e-05, 'epoch': 121.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:19,458 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-244
+[INFO|trainer.py:2148] 2022-07-10 01:21:19,458 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:19,861 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-242] due to args.save_total_limit
+{'loss': 0.6154, 'learning_rate': 4.105263157894737e-05, 'epoch': 122.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:23,821 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-246
+[INFO|trainer.py:2148] 2022-07-10 01:21:23,821 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:24,221 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-244] due to args.save_total_limit
+{'loss': 0.5531, 'learning_rate': 4.0526315789473684e-05, 'epoch': 123.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:28,194 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-248
+[INFO|trainer.py:2148] 2022-07-10 01:21:28,194 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:28,612 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-246] due to args.save_total_limit
+{'loss': 0.5921, 'learning_rate': 4e-05, 'epoch': 124.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:32,598 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-250
+[INFO|trainer.py:2148] 2022-07-10 01:21:32,598 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:32,986 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-248] due to args.save_total_limit
+{'loss': 0.618, 'learning_rate': 3.9473684210526316e-05, 'epoch': 125.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:36,874 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-252
+[INFO|trainer.py:2148] 2022-07-10 01:21:36,874 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:37,304 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-250] due to args.save_total_limit
+{'loss': 0.6441, 'learning_rate': 3.894736842105263e-05, 'epoch': 126.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:41,153 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-254
+[INFO|trainer.py:2148] 2022-07-10 01:21:41,154 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:41,549 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-252] due to args.save_total_limit
+{'loss': 0.6171, 'learning_rate': 3.842105263157895e-05, 'epoch': 127.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:45,437 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-256
+[INFO|trainer.py:2148] 2022-07-10 01:21:45,437 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:45,833 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-254] due to args.save_total_limit
+{'loss': 0.5786, 'learning_rate': 3.789473684210527e-05, 'epoch': 128.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:49,726 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-258
+[INFO|trainer.py:2148] 2022-07-10 01:21:49,727 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:50,111 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-256] due to args.save_total_limit
+{'loss': 0.5313, 'learning_rate': 3.736842105263158e-05, 'epoch': 129.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:53,972 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-260
+[INFO|trainer.py:2148] 2022-07-10 01:21:53,972 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:54,355 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-258] due to args.save_total_limit
+{'loss': 0.5975, 'learning_rate': 3.6842105263157895e-05, 'epoch': 130.0}
+[INFO|trainer.py:2139] 2022-07-10 01:21:58,228 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-262
+[INFO|trainer.py:2148] 2022-07-10 01:21:58,228 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:21:58,610 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-260] due to args.save_total_limit
+{'loss': 0.6157, 'learning_rate': 3.6315789473684214e-05, 'epoch': 131.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:02,571 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-264
+[INFO|trainer.py:2148] 2022-07-10 01:22:02,572 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:02,961 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-262] due to args.save_total_limit
+{'loss': 0.5653, 'learning_rate': 3.578947368421053e-05, 'epoch': 132.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:06,838 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-266
+[INFO|trainer.py:2148] 2022-07-10 01:22:06,838 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:07,232 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-264] due to args.save_total_limit
+{'loss': 0.5825, 'learning_rate': 3.526315789473684e-05, 'epoch': 133.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:11,108 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-268
+[INFO|trainer.py:2148] 2022-07-10 01:22:11,109 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:11,505 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-266] due to args.save_total_limit
+{'loss': 0.5801, 'learning_rate': 3.473684210526316e-05, 'epoch': 134.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:15,378 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-270
+[INFO|trainer.py:2148] 2022-07-10 01:22:15,379 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:15,777 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-268] due to args.save_total_limit
+{'loss': 0.621, 'learning_rate': 3.421052631578947e-05, 'epoch': 135.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:19,655 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-272
+[INFO|trainer.py:2148] 2022-07-10 01:22:19,655 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:20,045 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-270] due to args.save_total_limit
+{'loss': 0.5488, 'learning_rate': 3.368421052631579e-05, 'epoch': 136.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:23,952 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-274
+[INFO|trainer.py:2148] 2022-07-10 01:22:23,952 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:24,345 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-272] due to args.save_total_limit
+{'loss': 0.5704, 'learning_rate': 3.3157894736842106e-05, 'epoch': 137.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:28,252 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-276
+[INFO|trainer.py:2148] 2022-07-10 01:22:28,252 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:28,669 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-274] due to args.save_total_limit
+{'loss': 0.5424, 'learning_rate': 3.2631578947368426e-05, 'epoch': 138.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:32,509 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-278
+[INFO|trainer.py:2148] 2022-07-10 01:22:32,510 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:32,903 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-276] due to args.save_total_limit
+{'loss': 0.6233, 'learning_rate': 3.210526315789474e-05, 'epoch': 139.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:36,796 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-280
+[INFO|trainer.py:2148] 2022-07-10 01:22:36,796 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:37,194 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-278] due to args.save_total_limit
+{'loss': 0.4991, 'learning_rate': 3.157894736842105e-05, 'epoch': 140.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:41,078 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-282
+[INFO|trainer.py:2148] 2022-07-10 01:22:41,079 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:41,461 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-280] due to args.save_total_limit
+{'loss': 0.5835, 'learning_rate': 3.105263157894737e-05, 'epoch': 141.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:45,339 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-284
+[INFO|trainer.py:2148] 2022-07-10 01:22:45,339 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:45,736 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-282] due to args.save_total_limit
+{'loss': 0.5818, 'learning_rate': 3.0526315789473684e-05, 'epoch': 142.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:49,628 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-286
+[INFO|trainer.py:2148] 2022-07-10 01:22:49,628 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:50,012 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-284] due to args.save_total_limit
+{'loss': 0.6255, 'learning_rate': 3e-05, 'epoch': 143.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:53,885 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-288
+[INFO|trainer.py:2148] 2022-07-10 01:22:53,885 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:54,274 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-286] due to args.save_total_limit
+{'loss': 0.6221, 'learning_rate': 2.9473684210526314e-05, 'epoch': 144.0}
+[INFO|trainer.py:2139] 2022-07-10 01:22:58,180 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-290
+[INFO|trainer.py:2148] 2022-07-10 01:22:58,180 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:22:58,581 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-288] due to args.save_total_limit
+{'loss': 0.6013, 'learning_rate': 2.8947368421052634e-05, 'epoch': 145.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:02,482 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-292
+[INFO|trainer.py:2148] 2022-07-10 01:23:02,482 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:02,888 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-290] due to args.save_total_limit
+{'loss': 0.5722, 'learning_rate': 2.842105263157895e-05, 'epoch': 146.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:06,780 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-294
+[INFO|trainer.py:2148] 2022-07-10 01:23:06,780 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:07,182 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-292] due to args.save_total_limit
+{'loss': 0.5699, 'learning_rate': 2.7894736842105263e-05, 'epoch': 147.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:11,027 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-296
+[INFO|trainer.py:2148] 2022-07-10 01:23:11,027 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:11,420 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-294] due to args.save_total_limit
+{'loss': 0.5851, 'learning_rate': 2.7368421052631583e-05, 'epoch': 148.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:15,317 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-298
+[INFO|trainer.py:2148] 2022-07-10 01:23:15,318 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:15,714 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-296] due to args.save_total_limit
+{'loss': 0.5691, 'learning_rate': 2.6842105263157896e-05, 'epoch': 149.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:19,558 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-300
+[INFO|trainer.py:2148] 2022-07-10 01:23:19,558 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:19,953 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-298] due to args.save_total_limit
+{'loss': 0.5615, 'learning_rate': 2.6315789473684212e-05, 'epoch': 150.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:23,835 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-302
+[INFO|trainer.py:2148] 2022-07-10 01:23:23,835 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:24,216 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-300] due to args.save_total_limit
+{'loss': 0.5533, 'learning_rate': 2.578947368421053e-05, 'epoch': 151.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:28,141 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-304
+[INFO|trainer.py:2148] 2022-07-10 01:23:28,141 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:28,532 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-302] due to args.save_total_limit
+{'loss': 0.6032, 'learning_rate': 2.5263157894736845e-05, 'epoch': 152.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:32,505 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-306
+[INFO|trainer.py:2148] 2022-07-10 01:23:32,506 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:32,897 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-304] due to args.save_total_limit
+{'loss': 0.6039, 'learning_rate': 2.4736842105263158e-05, 'epoch': 153.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:36,805 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-308
+[INFO|trainer.py:2148] 2022-07-10 01:23:36,805 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:37,200 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-306] due to args.save_total_limit
+{'loss': 0.582, 'learning_rate': 2.4210526315789474e-05, 'epoch': 154.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:41,151 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-310
+[INFO|trainer.py:2148] 2022-07-10 01:23:41,151 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:41,545 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-308] due to args.save_total_limit
+{'loss': 0.5741, 'learning_rate': 2.368421052631579e-05, 'epoch': 155.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:45,490 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-312
+[INFO|trainer.py:2148] 2022-07-10 01:23:45,490 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:45,901 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-310] due to args.save_total_limit
+{'loss': 0.5258, 'learning_rate': 2.3157894736842107e-05, 'epoch': 156.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:49,909 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-314
+[INFO|trainer.py:2148] 2022-07-10 01:23:49,909 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:50,324 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-312] due to args.save_total_limit
+{'loss': 0.5564, 'learning_rate': 2.2631578947368423e-05, 'epoch': 157.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:54,256 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-316
+[INFO|trainer.py:2148] 2022-07-10 01:23:54,256 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:54,648 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-314] due to args.save_total_limit
+{'loss': 0.5388, 'learning_rate': 2.2105263157894736e-05, 'epoch': 158.0}
+[INFO|trainer.py:2139] 2022-07-10 01:23:58,529 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-318
+[INFO|trainer.py:2148] 2022-07-10 01:23:58,529 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:23:58,933 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-316] due to args.save_total_limit
+{'loss': 0.5571, 'learning_rate': 2.1578947368421053e-05, 'epoch': 159.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:02,880 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-320
+[INFO|trainer.py:2148] 2022-07-10 01:24:02,880 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:03,298 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-318] due to args.save_total_limit
+{'loss': 0.5732, 'learning_rate': 2.105263157894737e-05, 'epoch': 160.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:07,195 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-322
+[INFO|trainer.py:2148] 2022-07-10 01:24:07,195 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:07,588 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-320] due to args.save_total_limit
+{'loss': 0.5552, 'learning_rate': 2.0526315789473685e-05, 'epoch': 161.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:11,570 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-324
+[INFO|trainer.py:2148] 2022-07-10 01:24:11,570 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:11,970 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-322] due to args.save_total_limit
+{'loss': 0.5867, 'learning_rate': 2e-05, 'epoch': 162.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:15,906 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-326
+[INFO|trainer.py:2148] 2022-07-10 01:24:15,907 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:16,303 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-324] due to args.save_total_limit
+{'loss': 0.5475, 'learning_rate': 1.9473684210526315e-05, 'epoch': 163.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:20,183 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-328
+[INFO|trainer.py:2148] 2022-07-10 01:24:20,183 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:20,579 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-326] due to args.save_total_limit
+{'loss': 0.5875, 'learning_rate': 1.8947368421052634e-05, 'epoch': 164.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:24,482 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-330
+[INFO|trainer.py:2148] 2022-07-10 01:24:24,483 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:24,878 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-328] due to args.save_total_limit
+{'loss': 0.5899, 'learning_rate': 1.8421052631578947e-05, 'epoch': 165.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:28,724 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-332
+[INFO|trainer.py:2148] 2022-07-10 01:24:28,724 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:29,116 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-330] due to args.save_total_limit
+{'loss': 0.5094, 'learning_rate': 1.7894736842105264e-05, 'epoch': 166.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:33,064 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-334
+[INFO|trainer.py:2148] 2022-07-10 01:24:33,065 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:33,452 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-332] due to args.save_total_limit
+{'loss': 0.5746, 'learning_rate': 1.736842105263158e-05, 'epoch': 167.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:37,307 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-336
+[INFO|trainer.py:2148] 2022-07-10 01:24:37,307 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:37,706 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-334] due to args.save_total_limit
+{'loss': 0.5197, 'learning_rate': 1.6842105263157896e-05, 'epoch': 168.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:41,543 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-338
+[INFO|trainer.py:2148] 2022-07-10 01:24:41,543 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:41,939 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-336] due to args.save_total_limit
+{'loss': 0.5952, 'learning_rate': 1.6315789473684213e-05, 'epoch': 169.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:45,783 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-340
+[INFO|trainer.py:2148] 2022-07-10 01:24:45,783 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:46,176 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-338] due to args.save_total_limit
+{'loss': 0.5962, 'learning_rate': 1.5789473684210526e-05, 'epoch': 170.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:50,029 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-342
+[INFO|trainer.py:2148] 2022-07-10 01:24:50,029 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:50,410 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-340] due to args.save_total_limit
+{'loss': 0.5589, 'learning_rate': 1.5263157894736842e-05, 'epoch': 171.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:54,302 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-344
+[INFO|trainer.py:2148] 2022-07-10 01:24:54,302 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:54,690 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-342] due to args.save_total_limit
+{'loss': 0.5355, 'learning_rate': 1.4736842105263157e-05, 'epoch': 172.0}
+[INFO|trainer.py:2139] 2022-07-10 01:24:58,566 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-346
+[INFO|trainer.py:2148] 2022-07-10 01:24:58,566 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:24:58,966 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-344] due to args.save_total_limit
+{'loss': 0.5881, 'learning_rate': 1.4210526315789475e-05, 'epoch': 173.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:02,860 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-348
+[INFO|trainer.py:2148] 2022-07-10 01:25:02,860 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:03,263 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-346] due to args.save_total_limit
+{'loss': 0.5574, 'learning_rate': 1.3684210526315791e-05, 'epoch': 174.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:07,068 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-350
+[INFO|trainer.py:2148] 2022-07-10 01:25:07,069 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:07,462 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-348] due to args.save_total_limit
+{'loss': 0.5844, 'learning_rate': 1.3157894736842106e-05, 'epoch': 175.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:11,358 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-352
+[INFO|trainer.py:2148] 2022-07-10 01:25:11,358 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:11,755 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-350] due to args.save_total_limit
+{'loss': 0.6044, 'learning_rate': 1.2631578947368422e-05, 'epoch': 176.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:15,613 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-354
+[INFO|trainer.py:2148] 2022-07-10 01:25:15,613 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:15,994 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-352] due to args.save_total_limit
+{'loss': 0.5719, 'learning_rate': 1.2105263157894737e-05, 'epoch': 177.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:19,870 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-356
+[INFO|trainer.py:2148] 2022-07-10 01:25:19,870 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:20,260 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-354] due to args.save_total_limit
+{'loss': 0.5706, 'learning_rate': 1.1578947368421053e-05, 'epoch': 178.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:24,081 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-358
+[INFO|trainer.py:2148] 2022-07-10 01:25:24,081 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:24,472 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-356] due to args.save_total_limit
+{'loss': 0.5822, 'learning_rate': 1.1052631578947368e-05, 'epoch': 179.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:28,274 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-360
+[INFO|trainer.py:2148] 2022-07-10 01:25:28,274 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:28,665 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-358] due to args.save_total_limit
+{'loss': 0.5764, 'learning_rate': 1.0526315789473684e-05, 'epoch': 180.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:32,553 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-362
+[INFO|trainer.py:2148] 2022-07-10 01:25:32,553 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:32,948 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-360] due to args.save_total_limit
+{'loss': 0.5246, 'learning_rate': 1e-05, 'epoch': 181.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:36,776 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-364
+[INFO|trainer.py:2148] 2022-07-10 01:25:36,777 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:37,188 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-362] due to args.save_total_limit
+{'loss': 0.5632, 'learning_rate': 9.473684210526317e-06, 'epoch': 182.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:41,044 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-366
+[INFO|trainer.py:2148] 2022-07-10 01:25:41,044 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:41,432 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-364] due to args.save_total_limit
+{'loss': 0.5636, 'learning_rate': 8.947368421052632e-06, 'epoch': 183.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:45,296 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-368
+[INFO|trainer.py:2148] 2022-07-10 01:25:45,296 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:45,696 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-366] due to args.save_total_limit
+{'loss': 0.5347, 'learning_rate': 8.421052631578948e-06, 'epoch': 184.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:49,591 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-370
+[INFO|trainer.py:2148] 2022-07-10 01:25:49,591 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:49,998 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-368] due to args.save_total_limit
+{'loss': 0.5387, 'learning_rate': 7.894736842105263e-06, 'epoch': 185.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:53,904 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-372
+[INFO|trainer.py:2148] 2022-07-10 01:25:53,904 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:54,312 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-370] due to args.save_total_limit
+{'loss': 0.5206, 'learning_rate': 7.3684210526315784e-06, 'epoch': 186.0}
+[INFO|trainer.py:2139] 2022-07-10 01:25:58,232 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-374
+[INFO|trainer.py:2148] 2022-07-10 01:25:58,232 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:25:58,632 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-372] due to args.save_total_limit
+{'loss': 0.6282, 'learning_rate': 6.842105263157896e-06, 'epoch': 187.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:02,564 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-376
+[INFO|trainer.py:2148] 2022-07-10 01:26:02,564 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:02,951 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-374] due to args.save_total_limit
+{'loss': 0.5409, 'learning_rate': 6.315789473684211e-06, 'epoch': 188.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:06,804 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-378
+[INFO|trainer.py:2148] 2022-07-10 01:26:06,804 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:07,196 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-376] due to args.save_total_limit
+{'loss': 0.5582, 'learning_rate': 5.789473684210527e-06, 'epoch': 189.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:11,097 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-380
+[INFO|trainer.py:2148] 2022-07-10 01:26:11,097 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:11,489 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-378] due to args.save_total_limit
+{'loss': 0.5533, 'learning_rate': 5.263157894736842e-06, 'epoch': 190.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:15,377 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-382
+[INFO|trainer.py:2148] 2022-07-10 01:26:15,377 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:15,776 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-380] due to args.save_total_limit
+{'loss': 0.5523, 'learning_rate': 4.736842105263159e-06, 'epoch': 191.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:19,637 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-384
+[INFO|trainer.py:2148] 2022-07-10 01:26:19,637 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:20,027 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-382] due to args.save_total_limit
+{'loss': 0.5622, 'learning_rate': 4.210526315789474e-06, 'epoch': 192.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:23,944 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-386
+[INFO|trainer.py:2148] 2022-07-10 01:26:23,944 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:24,344 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-384] due to args.save_total_limit
+{'loss': 0.5312, 'learning_rate': 3.6842105263157892e-06, 'epoch': 193.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:28,228 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-388
+[INFO|trainer.py:2148] 2022-07-10 01:26:28,228 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:28,637 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-386] due to args.save_total_limit
+{'loss': 0.5286, 'learning_rate': 3.1578947368421056e-06, 'epoch': 194.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:32,500 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-390
+[INFO|trainer.py:2148] 2022-07-10 01:26:32,500 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:32,887 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-388] due to args.save_total_limit
+{'loss': 0.5694, 'learning_rate': 2.631578947368421e-06, 'epoch': 195.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:36,766 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-392
+[INFO|trainer.py:2148] 2022-07-10 01:26:36,766 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:37,173 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-390] due to args.save_total_limit
+{'loss': 0.5425, 'learning_rate': 2.105263157894737e-06, 'epoch': 196.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:41,063 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-394
+[INFO|trainer.py:2148] 2022-07-10 01:26:41,064 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:41,457 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-392] due to args.save_total_limit
+{'loss': 0.54, 'learning_rate': 1.5789473684210528e-06, 'epoch': 197.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:45,322 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-396
+[INFO|trainer.py:2148] 2022-07-10 01:26:45,322 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:45,713 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-394] due to args.save_total_limit
+{'loss': 0.5873, 'learning_rate': 1.0526315789473685e-06, 'epoch': 198.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:49,604 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-398
+[INFO|trainer.py:2148] 2022-07-10 01:26:49,604 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:50,003 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-396] due to args.save_total_limit
+{'loss': 0.5718, 'learning_rate': 5.263157894736843e-07, 'epoch': 199.0}
+[INFO|trainer.py:2139] 2022-07-10 01:26:53,872 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-400
+[INFO|trainer.py:2148] 2022-07-10 01:26:53,872 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+[INFO|trainer.py:2217] 2022-07-10 01:26:54,273 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/checkpoint-398] due to args.save_total_limit
+[INFO|trainer.py:1508] 2022-07-10 01:26:54,308 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+[INFO|trainer.py:2139] 2022-07-10 01:26:54,311 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/contrastive/abtbuy-clean-COMBO-False-PROB-0.10-AUG-typo1024-1e-04-0.07-TinyBERT_General_4L_312D/
+[INFO|trainer.py:2148] 2022-07-10 01:26:54,311 >> Trainer.model is not a `PreTrainedModel`, only saving its state dict.
+{'loss': 0.5497, 'learning_rate': 0.0, 'epoch': 200.0}
+{'train_runtime': 878.3015, 'train_samples_per_second': 392.804, 'train_steps_per_second': 0.455, 'train_loss': 0.9825782319903373, 'epoch': 200.0}
+***** train metrics *****
+  epoch                    =      200.0
+  train_loss               =     0.9826
+  train_runtime            = 0:14:38.30
+  train_samples            =       1725
+  train_samples_per_second =    392.804
+  train_steps_per_second   =      0.455
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n508
+Job ID: 20885375
+Cluster: uc2
+User/Group: ma_dmittal/ma_ma
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 10
+CPU Utilized: 00:24:01
+CPU Efficiency: 15.38% of 02:36:10 core-walltime
+Job Wall-clock time: 00:15:37
+Memory Utilized: 14.35 GB
+Memory Efficiency: 0.00% of 0.00 MB

@@ -1,0 +1,200 @@
+07/10/2022 11:49:28 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1distributed training: False, 16-bits training: True
+07/10/2022 11:49:28 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+bf16=False,
+bf16_full_eval=False,
+dataloader_drop_last=False,
+dataloader_num_workers=4,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=True,
+do_eval=True,
+do_predict=False,
+do_train=False,
+eval_accumulation_steps=None,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.EPOCH,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=True,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=True,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/abtbuy-COMBO-False-PROB-0.10-AUG-none-32-1e-04-TinyBERT_General_4L_312D/runs/Jul10_11-49-27_uc2n507.localdomain,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=f1,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=50.0,
+optim=OptimizerNames.ADAMW_HF,
+output_dir=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/abtbuy-COMBO-False-PROB-0.10-AUG-none-32-1e-04-TinyBERT_General_4L_312D/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=32,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+run_name=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/abtbuy-COMBO-False-PROB-0.10-AUG-none-32-1e-04-TinyBERT_General_4L_312D/,
+save_on_each_node=False,
+save_steps=500,
+save_strategy=IntervalStrategy.EPOCH,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.05,
+warmup_steps=0,
+weight_decay=0.01,
+xpu_backend=None,
+)
+[INFO|tokenization_auto.py:344] 2022-07-10 11:49:28,808 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|configuration_utils.py:648] 2022-07-10 11:49:29,246 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 11:49:29,247 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 11:49:31,801 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/vocab.txt from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4ec675a1f3cd38f2ddbe71010ce58471a710dd0188687381cf6f06fa7860c86a.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 11:49:31,801 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 11:49:31,801 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 11:49:31,801 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 11:49:31,801 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer_config.json from cache at None
+[INFO|configuration_utils.py:648] 2022-07-10 11:49:32,231 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 11:49:32,231 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils.py:426] 2022-07-10 11:49:32,288 >> Adding [COL] to the vocabulary
+[INFO|tokenization_utils.py:426] 2022-07-10 11:49:32,288 >> Adding [VAL] to the vocabulary
+[WARNING|logging.py:279] 2022-07-10 11:49:32,288 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:648] 2022-07-10 11:49:32,718 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 11:49:32,719 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[WARNING|logging.py:279] 2022-07-10 11:49:32,914 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Traceback (most recent call last):
+  File "/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/src/contrastive/run_finetune_baseline.py", line 473, in <module>
+    main()
+  File "/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/src/contrastive/run_finetune_baseline.py", line 275, in main
+    data_collator = DataCollatorWithPadding(tokenizer=train_dataset.tokenizer, padding='longest', max_length=256)
+UnboundLocalError: local variable 'train_dataset' referenced before assignment
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n507
+Job ID: 20885868
+Cluster: uc2
+User/Group: ma_dmittal/ma_ma
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 10
+CPU Utilized: 00:00:05
+CPU Efficiency: 0.44% of 00:18:50 core-walltime
+Job Wall-clock time: 00:01:53
+Memory Utilized: 302.35 MB
+Memory Efficiency: 0.00% of 0.00 MB

@@ -1,0 +1,224 @@
+07/06/2022 08:05:35 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1distributed training: False, 16-bits training: True
+07/06/2022 08:05:35 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+bf16=False,
+bf16_full_eval=False,
+dataloader_drop_last=False,
+dataloader_num_workers=4,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=True,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.EPOCH,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=True,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=True,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/abtbuy-typo32-1e-04-TinyBERT_General_4L_312D/runs/Jul06_08-05-35_uc2n517.localdomain,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=f1,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=50.0,
+optim=OptimizerNames.ADAMW_HF,
+output_dir=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/abtbuy-typo32-1e-04-TinyBERT_General_4L_312D/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=32,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+run_name=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/abtbuy-typo32-1e-04-TinyBERT_General_4L_312D/,
+save_on_each_node=False,
+save_steps=500,
+save_strategy=IntervalStrategy.EPOCH,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.05,
+warmup_steps=0,
+weight_decay=0.01,
+xpu_backend=None,
+)
+[INFO|tokenization_auto.py:344] 2022-07-06 08:05:35,912 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|file_utils.py:2215] 2022-07-06 08:05:36,343 >> https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json not found in cache or force_download set to True, downloading to /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/tmpki_otut4
+Downloading:   0%|          | 0.00/409 [00:00<?, ?B/s]Downloading: 100%|██████████| 409/409 [00:00<00:00, 496kB/s]
+[INFO|file_utils.py:2219] 2022-07-06 08:05:36,794 >> storing https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json in cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|file_utils.py:2227] 2022-07-06 08:05:36,795 >> creating metadata file for /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:648] 2022-07-06 08:05:36,797 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-06 08:05:36,798 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|file_utils.py:2215] 2022-07-06 08:05:37,649 >> https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/vocab.txt not found in cache or force_download set to True, downloading to /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/tmptuypzqcg
+Downloading:   0%|          | 0.00/226k [00:00<?, ?B/s]Downloading:   2%|▏         | 4.00k/226k [00:00<00:05, 40.7kB/s]Downloading:  14%|█▍        | 32.0k/226k [00:00<00:01, 185kB/s] Downloading:  42%|████▏     | 96.0k/226k [00:00<00:00, 399kB/s]Downloading:  87%|████████▋ | 196k/226k [00:00<00:00, 645kB/s] Downloading: 100%|██████████| 226k/226k [00:00<00:00, 576kB/s]
+[INFO|file_utils.py:2219] 2022-07-06 08:05:38,482 >> storing https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/vocab.txt in cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4ec675a1f3cd38f2ddbe71010ce58471a710dd0188687381cf6f06fa7860c86a.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|file_utils.py:2227] 2022-07-06 08:05:38,483 >> creating metadata file for /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4ec675a1f3cd38f2ddbe71010ce58471a710dd0188687381cf6f06fa7860c86a.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2022-07-06 08:05:40,191 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/vocab.txt from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4ec675a1f3cd38f2ddbe71010ce58471a710dd0188687381cf6f06fa7860c86a.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2022-07-06 08:05:40,192 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-06 08:05:40,192 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-06 08:05:40,192 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-06 08:05:40,192 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer_config.json from cache at None
+[INFO|configuration_utils.py:648] 2022-07-06 08:05:40,620 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-06 08:05:40,621 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils.py:426] 2022-07-06 08:05:40,645 >> Adding [COL] to the vocabulary
+[INFO|tokenization_utils.py:426] 2022-07-06 08:05:40,645 >> Adding [VAL] to the vocabulary
+[WARNING|logging.py:279] 2022-07-06 08:05:40,645 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:648] 2022-07-06 08:05:41,065 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-06 08:05:41,065 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[WARNING|logging.py:279] 2022-07-06 08:05:41,587 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Traceback (most recent call last):
+  File "/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/src/contrastive/run_finetune_baseline.py", line 473, in <module>
+    main()
+  File "/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/src/contrastive/run_finetune_baseline.py", line 250, in main
+    train_dataset = BaselineClassificationDataset(train_dataset, dataset_type='train', size=data_args.train_size, tokenizer=model_args.tokenizer, dataset=data_args.dataset_name, aug=data_args.augment, aug_prob=data_args.augment_prob, combo=data_args.combo)
+  File "/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/src/contrastive/data/datasets.py", line 951, in __init__
+    self.augmenter = Augmenter(self.aug, self.aug_prob, combo)
+  File "/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/src/contrastive/data/datasets.py", line 107, in __init__
+    aug_spell = naw.SpellingAug(dict_path='/ceph/dmittal/di-student/spelling_en.txt', stopwords=stopwords, aug_p=aug_prob)
+  File "/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/nlpaug/augmenter/word/spelling.py", line 60, in __init__
+    self.model = self.get_model(force_reload=False)
+  File "/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/nlpaug/augmenter/word/spelling.py", line 112, in get_model
+    return init_spelling_error_model(self.dict_path, self.include_reverse, force_reload)
+  File "/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/nlpaug/augmenter/word/spelling.py", line 21, in init_spelling_error_model
+    spelling_error_model = nmwd.Spelling(dict_path, include_reverse)
+  File "/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/nlpaug/model/word_dict/spelling.py", line 15, in __init__
+    self._init()
+  File "/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/nlpaug/model/word_dict/spelling.py", line 19, in _init
+    self.read(self.dict_path)
+  File "/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/nlpaug/model/word_dict/spelling.py", line 22, in read
+    with open(model_path, 'r', encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/ceph/dmittal/di-student/spelling_en.txt'
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n517
+Job ID: 20873172
+Cluster: uc2
+User/Group: ma_dmittal/ma_ma
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 10
+CPU Utilized: 00:00:04
+CPU Efficiency: 0.35% of 00:18:50 core-walltime
+Job Wall-clock time: 00:01:53
+Memory Utilized: 307.07 MB
+Memory Efficiency: 0.00% of 0.00 MB

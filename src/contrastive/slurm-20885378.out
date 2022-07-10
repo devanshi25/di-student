@@ -1,0 +1,850 @@
+07/10/2022 01:21:32 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1distributed training: False, 16-bits training: True
+07/10/2022 01:21:32 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+bf16=False,
+bf16_full_eval=False,
+dataloader_drop_last=False,
+dataloader_num_workers=4,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=True,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.EPOCH,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=True,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0001,
+length_column_name=length,
+load_best_model_at_end=True,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/runs/Jul10_01-21-32_uc2n508.localdomain,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=f1,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=50.0,
+optim=OptimizerNames.ADAMW_HF,
+output_dir=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=64,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+run_name=/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/,
+save_on_each_node=False,
+save_steps=500,
+save_strategy=IntervalStrategy.EPOCH,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.05,
+warmup_steps=0,
+weight_decay=0.01,
+xpu_backend=None,
+)
+[INFO|tokenization_auto.py:344] 2022-07-10 01:21:33,015 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:33,442 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:33,443 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:35,986 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/vocab.txt from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4ec675a1f3cd38f2ddbe71010ce58471a710dd0188687381cf6f06fa7860c86a.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:35,986 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:35,986 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:35,986 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:35,986 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer_config.json from cache at None
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:36,413 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:36,413 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils.py:426] 2022-07-10 01:21:36,437 >> Adding [COL] to the vocabulary
+[INFO|tokenization_utils.py:426] 2022-07-10 01:21:36,437 >> Adding [VAL] to the vocabulary
+[WARNING|logging.py:279] 2022-07-10 01:21:36,437 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:36,858 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:36,859 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[WARNING|logging.py:279] 2022-07-10 01:21:36,871 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|tokenization_auto.py:344] 2022-07-10 01:21:37,404 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:37,829 >> loading configuration file https://huggingface.co/distilroberta-base/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/42d6b7c87cbac84fcdf35aa69504a5ccfca878fcee2a1a9b9ff7a3d1297f9094.aa95727ac70adfa1aaf5c88bea30a4f5e50869c68e68bce96ef1ec41b5facf46
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:37,830 >> Model config RobertaConfig {
+  "_name_or_path": "distilroberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:40,795 >> loading file https://huggingface.co/distilroberta-base/resolve/main/vocab.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/23e0f7484fc8a320856b168861166b48c2976bb4e0861602422e1b0c3fe5bf61.d67d6b367eb24ab43b08ad55e014cf254076934f71d832bbab9ad35644a375ab
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:40,795 >> loading file https://huggingface.co/distilroberta-base/resolve/main/merges.txt from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/c7e8020011da613ff5a9175ddad64cd47238a9525db975eb50ecb965e9f7302f.5d12962c5ee615a4c803841266e9c3be9a691a924f72d395d3a6c6c81157788b
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:40,795 >> loading file https://huggingface.co/distilroberta-base/resolve/main/tokenizer.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/b6a9ca6504e67903474c3fdf82ba249882406e61c2176a9d4dc9c3691c663767.fc9576039592f026ad76a1c231b89aee8668488c671dfbe6616bab2ed298d730
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:40,795 >> loading file https://huggingface.co/distilroberta-base/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:40,795 >> loading file https://huggingface.co/distilroberta-base/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:40,795 >> loading file https://huggingface.co/distilroberta-base/resolve/main/tokenizer_config.json from cache at None
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:41,214 >> loading configuration file https://huggingface.co/distilroberta-base/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/42d6b7c87cbac84fcdf35aa69504a5ccfca878fcee2a1a9b9ff7a3d1297f9094.aa95727ac70adfa1aaf5c88bea30a4f5e50869c68e68bce96ef1ec41b5facf46
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:41,215 >> Model config RobertaConfig {
+  "_name_or_path": "distilroberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:41,695 >> loading configuration file https://huggingface.co/distilroberta-base/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/42d6b7c87cbac84fcdf35aa69504a5ccfca878fcee2a1a9b9ff7a3d1297f9094.aa95727ac70adfa1aaf5c88bea30a4f5e50869c68e68bce96ef1ec41b5facf46
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:41,695 >> Model config RobertaConfig {
+  "_name_or_path": "distilroberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 6,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|tokenization_auto.py:344] 2022-07-10 01:21:43,848 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:44,272 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:44,272 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:46,809 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/vocab.txt from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4ec675a1f3cd38f2ddbe71010ce58471a710dd0188687381cf6f06fa7860c86a.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:46,809 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:46,809 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:46,809 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:46,809 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer_config.json from cache at None
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:47,228 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:47,229 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils.py:426] 2022-07-10 01:21:47,320 >> Adding [COL] to the vocabulary
+[INFO|tokenization_utils.py:426] 2022-07-10 01:21:47,320 >> Adding [VAL] to the vocabulary
+[WARNING|logging.py:279] 2022-07-10 01:21:47,320 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:47,741 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:47,742 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[WARNING|logging.py:279] 2022-07-10 01:21:47,754 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|tokenization_auto.py:344] 2022-07-10 01:21:48,245 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:48,666 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:48,666 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:51,208 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/vocab.txt from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4ec675a1f3cd38f2ddbe71010ce58471a710dd0188687381cf6f06fa7860c86a.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:51,208 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:51,208 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:51,208 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:51,208 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer_config.json from cache at None
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:51,636 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:51,637 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils.py:426] 2022-07-10 01:21:51,655 >> Adding [COL] to the vocabulary
+[INFO|tokenization_utils.py:426] 2022-07-10 01:21:51,655 >> Adding [VAL] to the vocabulary
+[WARNING|logging.py:279] 2022-07-10 01:21:51,656 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:52,072 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:52,072 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[WARNING|logging.py:279] 2022-07-10 01:21:52,084 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|tokenization_auto.py:344] 2022-07-10 01:21:52,598 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:53,014 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:53,015 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:55,564 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/vocab.txt from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4ec675a1f3cd38f2ddbe71010ce58471a710dd0188687381cf6f06fa7860c86a.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:55,564 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:55,564 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:55,565 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2022-07-10 01:21:55,565 >> loading file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/tokenizer_config.json from cache at None
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:55,996 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:55,997 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils.py:426] 2022-07-10 01:21:56,020 >> Adding [COL] to the vocabulary
+[INFO|tokenization_utils.py:426] 2022-07-10 01:21:56,021 >> Adding [VAL] to the vocabulary
+[WARNING|logging.py:279] 2022-07-10 01:21:56,021 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:56,449 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:56,450 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[WARNING|logging.py:279] 2022-07-10 01:21:56,462 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:648] 2022-07-10 01:21:56,989 >> loading configuration file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/config.json from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/740f3ffeb47194ea97e78563af6f51d8fce8d8346d36d41889c75780869cf609.71ad48e6ad371e0c3ffa4982a5cc1c97e41023678e120b71ebe50addd42ec567
+[INFO|configuration_utils.py:684] 2022-07-10 01:21:56,990 >> Model config BertConfig {
+  "_name_or_path": "huawei-noah/TinyBERT_General_4L_312D",
+  "attention_probs_dropout_prob": 0.1,
+  "cell": {},
+  "classifier_dropout": null,
+  "emb_size": 312,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 312,
+  "initializer_range": 0.02,
+  "intermediate_size": 1200,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "pre_trained": "",
+  "structure": [],
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|modeling_utils.py:1431] 2022-07-10 01:21:57,418 >> loading weights file https://huggingface.co/huawei-noah/TinyBERT_General_4L_312D/resolve/main/pytorch_model.bin from cache at /home/ma/ma_ma/ma_dmittal/.cache/huggingface/transformers/4a4dca34df2df30c98747c12bff19ea7ee5380f4f180d8cfbbeff703c02793da.252b81fc76dfdd6968ed3f27881bcf37416e6c4ec326288155a94380bb85ed17
+[WARNING|modeling_utils.py:1693] 2022-07-10 01:21:57,560 >> Some weights of the model checkpoint at huawei-noah/TinyBERT_General_4L_312D were not used when initializing BertForSequenceClassification: ['fit_denses.1.weight', 'fit_denses.3.bias', 'fit_denses.0.weight', 'cls.predictions.transform.LayerNorm.weight', 'fit_denses.0.bias', 'cls.seq_relationship.bias', 'cls.predictions.bias', 'fit_denses.4.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.weight', 'fit_denses.4.bias', 'cls.predictions.transform.dense.bias', 'fit_denses.3.weight', 'fit_denses.2.weight', 'fit_denses.1.bias', 'fit_denses.2.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[WARNING|modeling_utils.py:1704] 2022-07-10 01:21:57,560 >> Some weights of BertForSequenceClassification were not initialized from the model checkpoint at huawei-noah/TinyBERT_General_4L_312D and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|trainer.py:457] 2022-07-10 01:22:00,268 >> Using amp half precision backend
+/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1279] 2022-07-10 01:22:00,273 >> ***** Running training *****
+[INFO|trainer.py:1280] 2022-07-10 01:22:00,273 >>   Num examples = 2267
+[INFO|trainer.py:1281] 2022-07-10 01:22:00,273 >>   Num Epochs = 50
+[INFO|trainer.py:1282] 2022-07-10 01:22:00,273 >>   Instantaneous batch size per device = 64
+[INFO|trainer.py:1283] 2022-07-10 01:22:00,273 >>   Total train batch size (w. parallel, distributed & accumulation) = 64
+[INFO|trainer.py:1284] 2022-07-10 01:22:00,273 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1285] 2022-07-10 01:22:00,273 >>   Total optimization steps = 1800
+[INFO|trainer.py:2389] 2022-07-10 01:22:03,814 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:03,814 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:03,814 >>   Batch size = 8
+/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[INFO|trainer.py:2139] 2022-07-10 01:22:04,537 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-36
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:04,539 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-36/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:04,666 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-36/pytorch_model.bin
+{'eval_loss': 0.5706918239593506, 'eval_accuracy': 0.746031746031746, 'eval_f1': 0.0, 'eval_precision': 0.0, 'eval_recall': 0.0, 'eval_runtime': 0.7189, 'eval_samples_per_second': 788.655, 'eval_steps_per_second': 98.756, 'epoch': 1.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:07,384 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:07,384 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:07,384 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:08,093 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-72
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:08,095 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-72/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:08,217 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-72/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:08,463 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-36] due to args.save_total_limit
+{'eval_loss': 0.4281778633594513, 'eval_accuracy': 0.8342151675485009, 'eval_f1': 0.6328125, 'eval_precision': 0.7232142857142857, 'eval_recall': 0.5625, 'eval_runtime': 0.7055, 'eval_samples_per_second': 803.704, 'eval_steps_per_second': 100.64, 'epoch': 2.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:10,952 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:10,952 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:10,952 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:11,629 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-108
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:11,631 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-108/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:11,757 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-108/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:11,999 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-72] due to args.save_total_limit
+{'eval_loss': 0.333081990480423, 'eval_accuracy': 0.8624338624338624, 'eval_f1': 0.7364864864864865, 'eval_precision': 0.7171052631578947, 'eval_recall': 0.7569444444444444, 'eval_runtime': 0.6735, 'eval_samples_per_second': 841.893, 'eval_steps_per_second': 105.422, 'epoch': 3.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:14,529 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:14,529 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:14,529 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:15,194 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-144
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:15,196 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-144/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:15,335 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-144/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:15,590 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-108] due to args.save_total_limit
+{'eval_loss': 0.30007225275039673, 'eval_accuracy': 0.8800705467372134, 'eval_f1': 0.7777777777777778, 'eval_precision': 0.7345679012345679, 'eval_recall': 0.8263888888888888, 'eval_runtime': 0.6602, 'eval_samples_per_second': 858.806, 'eval_steps_per_second': 107.54, 'epoch': 4.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:18,047 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:18,047 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:18,048 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:18,742 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-180
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:18,744 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-180/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:18,875 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-180/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:19,131 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-144] due to args.save_total_limit
+{'eval_loss': 0.2759414613246918, 'eval_accuracy': 0.8888888888888888, 'eval_f1': 0.7849829351535835, 'eval_precision': 0.7718120805369127, 'eval_recall': 0.7986111111111112, 'eval_runtime': 0.6907, 'eval_samples_per_second': 820.895, 'eval_steps_per_second': 102.793, 'epoch': 5.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:21,670 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:21,670 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:21,670 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:22,326 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-216
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:22,327 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-216/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:22,456 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-216/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:22,728 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-180] due to args.save_total_limit
+{'eval_loss': 0.2635626494884491, 'eval_accuracy': 0.8994708994708994, 'eval_f1': 0.788104089219331, 'eval_precision': 0.848, 'eval_recall': 0.7361111111111112, 'eval_runtime': 0.6515, 'eval_samples_per_second': 870.303, 'eval_steps_per_second': 108.98, 'epoch': 6.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:25,347 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:25,347 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:25,347 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:25,980 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-252
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:25,982 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-252/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:26,107 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-252/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:26,360 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-216] due to args.save_total_limit
+{'eval_loss': 0.3261844515800476, 'eval_accuracy': 0.873015873015873, 'eval_f1': 0.7894736842105263, 'eval_precision': 0.6818181818181818, 'eval_recall': 0.9375, 'eval_runtime': 0.6281, 'eval_samples_per_second': 902.748, 'eval_steps_per_second': 113.042, 'epoch': 7.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:28,853 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:28,853 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:28,853 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:29,566 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-288
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:29,568 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-288/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:29,694 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-288/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:29,945 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-252] due to args.save_total_limit
+{'eval_loss': 0.30175384879112244, 'eval_accuracy': 0.8941798941798942, 'eval_f1': 0.8051948051948052, 'eval_precision': 0.7560975609756098, 'eval_recall': 0.8611111111111112, 'eval_runtime': 0.7088, 'eval_samples_per_second': 799.942, 'eval_steps_per_second': 100.169, 'epoch': 8.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:32,485 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:32,485 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:32,486 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:33,166 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-324
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:33,168 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-324/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:33,301 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-324/pytorch_model.bin
+{'eval_loss': 0.2690599262714386, 'eval_accuracy': 0.8959435626102292, 'eval_f1': 0.7986348122866895, 'eval_precision': 0.785234899328859, 'eval_recall': 0.8125, 'eval_runtime': 0.6765, 'eval_samples_per_second': 838.178, 'eval_steps_per_second': 104.957, 'epoch': 9.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:36,047 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:36,047 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:36,047 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:36,707 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-360
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:36,716 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-360/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:36,842 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-360/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:37,106 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-324] due to args.save_total_limit
+{'eval_loss': 0.3006124496459961, 'eval_accuracy': 0.8871252204585538, 'eval_f1': 0.7746478873239437, 'eval_precision': 0.7857142857142857, 'eval_recall': 0.7638888888888888, 'eval_runtime': 0.656, 'eval_samples_per_second': 864.352, 'eval_steps_per_second': 108.235, 'epoch': 10.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:39,615 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:39,615 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:39,616 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:40,280 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-396
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:40,283 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-396/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:40,409 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-396/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:40,674 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-360] due to args.save_total_limit
+{'eval_loss': 0.48693111538887024, 'eval_accuracy': 0.8165784832451499, 'eval_f1': 0.7234042553191489, 'eval_precision': 0.5862068965517241, 'eval_recall': 0.9444444444444444, 'eval_runtime': 0.6606, 'eval_samples_per_second': 858.352, 'eval_steps_per_second': 107.483, 'epoch': 11.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:43,247 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:43,247 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:43,247 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:43,959 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-432
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:43,961 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-432/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:44,084 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-432/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:44,349 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-288] due to args.save_total_limit
+[INFO|trainer.py:2217] 2022-07-10 01:22:44,385 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-396] due to args.save_total_limit
+{'eval_loss': 0.3428725302219391, 'eval_accuracy': 0.8994708994708994, 'eval_f1': 0.8155339805825242, 'eval_precision': 0.7636363636363637, 'eval_recall': 0.875, 'eval_runtime': 0.7074, 'eval_samples_per_second': 801.546, 'eval_steps_per_second': 100.37, 'epoch': 12.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:46,913 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:46,914 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:46,914 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:47,629 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-468
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:47,631 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-468/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:47,759 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-468/pytorch_model.bin
+{'eval_loss': 0.3473689556121826, 'eval_accuracy': 0.8835978835978836, 'eval_f1': 0.7962962962962963, 'eval_precision': 0.7166666666666667, 'eval_recall': 0.8958333333333334, 'eval_runtime': 0.7119, 'eval_samples_per_second': 796.511, 'eval_steps_per_second': 99.74, 'epoch': 13.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:50,477 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:50,478 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:50,478 >>   Batch size = 8
+{'loss': 0.2631, 'learning_rate': 7.602339181286549e-05, 'epoch': 13.89}
+[INFO|trainer.py:2139] 2022-07-10 01:22:51,129 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-504
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:51,131 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-504/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:51,258 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-504/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:51,508 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-468] due to args.save_total_limit
+{'eval_loss': 0.37504100799560547, 'eval_accuracy': 0.8994708994708994, 'eval_f1': 0.8041237113402061, 'eval_precision': 0.7959183673469388, 'eval_recall': 0.8125, 'eval_runtime': 0.648, 'eval_samples_per_second': 875.061, 'eval_steps_per_second': 109.575, 'epoch': 14.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:54,066 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:54,066 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:54,066 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:54,751 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-540
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:54,753 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-540/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:54,886 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-540/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:55,145 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-504] due to args.save_total_limit
+{'eval_loss': 0.36148306727409363, 'eval_accuracy': 0.8959435626102292, 'eval_f1': 0.7986348122866895, 'eval_precision': 0.785234899328859, 'eval_recall': 0.8125, 'eval_runtime': 0.6808, 'eval_samples_per_second': 832.808, 'eval_steps_per_second': 104.285, 'epoch': 15.0}
+[INFO|trainer.py:2389] 2022-07-10 01:22:57,693 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:22:57,694 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:22:57,694 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:22:58,345 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-576
+[INFO|configuration_utils.py:439] 2022-07-10 01:22:58,347 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-576/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:22:58,476 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-576/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:22:58,723 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-540] due to args.save_total_limit
+{'eval_loss': 0.3288958966732025, 'eval_accuracy': 0.890652557319224, 'eval_f1': 0.7832167832167832, 'eval_precision': 0.7887323943661971, 'eval_recall': 0.7777777777777778, 'eval_runtime': 0.6482, 'eval_samples_per_second': 874.682, 'eval_steps_per_second': 109.528, 'epoch': 16.0}
+[INFO|trainer.py:2389] 2022-07-10 01:23:01,265 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:23:01,265 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:23:01,265 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:23:01,904 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-612
+[INFO|configuration_utils.py:439] 2022-07-10 01:23:01,912 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-612/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:23:02,040 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-612/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:23:02,297 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-576] due to args.save_total_limit
+{'eval_loss': 0.4140477776527405, 'eval_accuracy': 0.8818342151675485, 'eval_f1': 0.7788778877887788, 'eval_precision': 0.7421383647798742, 'eval_recall': 0.8194444444444444, 'eval_runtime': 0.6349, 'eval_samples_per_second': 893.015, 'eval_steps_per_second': 111.824, 'epoch': 17.0}
+[INFO|trainer.py:2389] 2022-07-10 01:23:04,812 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:23:04,812 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:23:04,812 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:23:05,451 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-648
+[INFO|configuration_utils.py:439] 2022-07-10 01:23:05,453 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-648/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:23:05,578 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-648/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:23:05,834 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-612] due to args.save_total_limit
+{'eval_loss': 0.47036343812942505, 'eval_accuracy': 0.8835978835978836, 'eval_f1': 0.7708333333333333, 'eval_precision': 0.7708333333333334, 'eval_recall': 0.7708333333333334, 'eval_runtime': 0.6346, 'eval_samples_per_second': 893.494, 'eval_steps_per_second': 111.884, 'epoch': 18.0}
+[INFO|trainer.py:2389] 2022-07-10 01:23:08,379 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:23:08,380 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:23:08,380 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:23:09,107 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-684
+[INFO|configuration_utils.py:439] 2022-07-10 01:23:09,109 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-684/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:23:09,233 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-684/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:23:09,483 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-648] due to args.save_total_limit
+{'eval_loss': 0.38183170557022095, 'eval_accuracy': 0.8959435626102292, 'eval_f1': 0.7929824561403509, 'eval_precision': 0.8014184397163121, 'eval_recall': 0.7847222222222222, 'eval_runtime': 0.7238, 'eval_samples_per_second': 783.407, 'eval_steps_per_second': 98.099, 'epoch': 19.0}
+[INFO|trainer.py:2389] 2022-07-10 01:23:11,984 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:23:11,984 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:23:11,984 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:23:12,636 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-720
+[INFO|configuration_utils.py:439] 2022-07-10 01:23:12,637 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-720/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:23:12,769 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-720/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:23:13,033 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-684] due to args.save_total_limit
+{'eval_loss': 0.4176028370857239, 'eval_accuracy': 0.8783068783068783, 'eval_f1': 0.7850467289719627, 'eval_precision': 0.711864406779661, 'eval_recall': 0.875, 'eval_runtime': 0.6474, 'eval_samples_per_second': 875.858, 'eval_steps_per_second': 109.675, 'epoch': 20.0}
+[INFO|trainer.py:2389] 2022-07-10 01:23:15,596 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:23:15,596 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:23:15,596 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:23:16,280 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-756
+[INFO|configuration_utils.py:439] 2022-07-10 01:23:16,284 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-756/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:23:16,411 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-756/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:23:16,662 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-720] due to args.save_total_limit
+{'eval_loss': 0.4525800347328186, 'eval_accuracy': 0.8853615520282186, 'eval_f1': 0.7962382445141066, 'eval_precision': 0.7257142857142858, 'eval_recall': 0.8819444444444444, 'eval_runtime': 0.6802, 'eval_samples_per_second': 833.628, 'eval_steps_per_second': 104.387, 'epoch': 21.0}
+[INFO|trainer.py:2389] 2022-07-10 01:23:19,207 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:23:19,207 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:23:19,207 >>   Batch size = 8
+[INFO|trainer.py:2139] 2022-07-10 01:23:19,902 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-792
+[INFO|configuration_utils.py:439] 2022-07-10 01:23:19,908 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-792/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:23:20,038 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-792/pytorch_model.bin
+[INFO|trainer.py:2217] 2022-07-10 01:23:20,301 >> Deleting older checkpoint [/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-756] due to args.save_total_limit
+[INFO|trainer.py:1508] 2022-07-10 01:23:20,333 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+[INFO|trainer.py:1516] 2022-07-10 01:23:20,334 >> Loading best model from /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/checkpoint-432 (score: 0.8155339805825242).
+[INFO|trainer.py:2139] 2022-07-10 01:23:20,402 >> Saving model checkpoint to /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0
+[INFO|configuration_utils.py:439] 2022-07-10 01:23:20,403 >> Configuration saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/config.json
+[INFO|modeling_utils.py:1084] 2022-07-10 01:23:20,526 >> Model weights saved in /pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/reports/baseline/computers-small-COMBO-False-PROB-0.10-AUG-typo64-1e-04-TinyBERT_General_4L_312D/0/pytorch_model.bin
+{'eval_loss': 0.4057014286518097, 'eval_accuracy': 0.8871252204585538, 'eval_f1': 0.7880794701986755, 'eval_precision': 0.7531645569620253, 'eval_recall': 0.8263888888888888, 'eval_runtime': 0.6909, 'eval_samples_per_second': 820.692, 'eval_steps_per_second': 102.767, 'epoch': 22.0}
+{'train_runtime': 80.1224, 'train_samples_per_second': 1414.71, 'train_steps_per_second': 22.466, 'train_loss': 0.19598280540620439, 'epoch': 22.0}
+***** train metrics *****
+  epoch                    =       22.0
+  train_loss               =      0.196
+  train_runtime            = 0:01:20.12
+  train_samples            =       2267
+  train_samples_per_second =    1414.71
+  train_steps_per_second   =     22.466
+07/10/2022 01:23:20 - INFO - __main__ - *** Evaluate ***
+[INFO|trainer.py:2389] 2022-07-10 01:23:20,532 >> ***** Running Evaluation *****
+[INFO|trainer.py:2391] 2022-07-10 01:23:20,532 >>   Num examples = 567
+[INFO|trainer.py:2394] 2022-07-10 01:23:20,532 >>   Batch size = 8
+{'eval_loss': 0.3428725302219391, 'eval_accuracy': 0.8994708994708994, 'eval_f1': 0.8155339805825242, 'eval_precision': 0.7636363636363637, 'eval_recall': 0.875, 'eval_runtime': 0.6143, 'eval_samples_per_second': 923.076, 'eval_steps_per_second': 115.588, 'epoch': 22.0}
+***** eval metrics *****
+  epoch                   =       22.0
+  eval_accuracy           =     0.8995
+  eval_f1                 =     0.8155
+  eval_loss               =     0.3429
+  eval_precision          =     0.7636
+  eval_recall             =      0.875
+  eval_runtime            = 0:00:00.61
+  eval_samples            =        567
+  eval_samples_per_second =    923.076
+  eval_steps_per_second   =    115.588
+07/10/2022 01:23:21 - INFO - __main__ - *** Predict ***
+[INFO|trainer.py:2389] 2022-07-10 01:23:21,181 >> ***** Running Prediction *****
+[INFO|trainer.py:2391] 2022-07-10 01:23:21,181 >>   Num examples = 1100
+[INFO|trainer.py:2394] 2022-07-10 01:23:21,181 >>   Batch size = 8
+[INFO|trainer.py:2389] 2022-07-10 01:23:22,895 >> ***** Running Prediction *****
+[INFO|trainer.py:2391] 2022-07-10 01:23:22,896 >>   Num examples = 1500
+[INFO|trainer.py:2394] 2022-07-10 01:23:22,896 >>   Batch size = 8
+***** predict metrics *****
+  predict_accuracy           =     0.8236
+  predict_f1                 =     0.7378
+  predict_loss               =     0.6189
+  predict_precision          =     0.6205
+  predict_recall             =       0.91
+  predict_runtime            = 0:00:01.71
+  predict_samples            =       1100
+  predict_samples_per_second =     642.59
+  predict_steps_per_second   =     80.616
+***** predict_swc metrics *****
+  predict_samples                =       1500
+  predict_swc_accuracy           =      0.744
+  predict_swc_f1                 =     0.6933
+  predict_swc_loss               =     0.9411
+  predict_swc_precision          =      0.597
+  predict_swc_recall             =     0.8267
+  predict_swc_runtime            = 0:00:02.28
+  predict_swc_samples_per_second =     655.46
+  predict_swc_steps_per_second   =     82.151
+Traceback (most recent call last):
+  File "/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/src/contrastive/run_finetune_baseline.py", line 473, in <module>
+    main()
+  File "/pfs/work7/workspace/scratch/ma_dmittal-dmittal/di-student/src/contrastive/run_finetune_baseline.py", line 458, in main
+    predictions = pd.DataFrame(predictions, columns=['label_pred'])
+  File "/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/pandas/core/frame.py", line 672, in __init__
+    mgr = ndarray_to_mgr(
+  File "/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/pandas/core/internals/construction.py", line 324, in ndarray_to_mgr
+    _check_values_indices_shape_match(values, index, columns)
+  File "/home/ma/ma_ma/ma_dmittal/anaconda3/envs/deeper-0322/lib/python3.9/site-packages/pandas/core/internals/construction.py", line 393, in _check_values_indices_shape_match
+    raise ValueError(f"Shape of passed values is {passed}, indices imply {implied}")
+ValueError: Shape of passed values is (1500, 2), indices imply (1500, 1)
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n508
+Job ID: 20885378
+Cluster: uc2
+User/Group: ma_dmittal/ma_ma
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 10
+CPU Utilized: 00:03:34
+CPU Efficiency: 15.18% of 00:23:30 core-walltime
+Job Wall-clock time: 00:02:21
+Memory Utilized: 13.84 GB
+Memory Efficiency: 0.00% of 0.00 MB
